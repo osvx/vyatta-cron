@@ -18,6 +18,7 @@ Configuration commands:
                     <int32>[mhd]    
 
 Example:
+
     system
         task-scheduler
             task mytask
@@ -52,14 +53,18 @@ or
     set system task-schedule task TEST interval 5m
 
 Run every two hours:
+
     set system task-schedule task TEST interval 2h
 
 Run every 7 days:
+
     set system task-schedule task TEST interval 7d
 
 ## cron-spec
 
 This is usual UNIX cron time spec. For the cases "interval" is not enough.
+
+    set system task-scheduler task TEST cron-spec "* * * 1 *"
 
 ## executable
 Path and arguments of the executable to run.
