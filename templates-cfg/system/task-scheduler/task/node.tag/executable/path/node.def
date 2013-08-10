@@ -1,0 +1,8 @@
+type: txt
+syntax:expression: exec
+    "if [ ! -x $VAR(@) ]; then \
+        echo \"File $VAR(@) does not exist or is not executable\"; \
+        exit 1; \
+    fi; "
+help: Path to executable
+

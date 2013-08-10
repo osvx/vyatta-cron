@@ -1,0 +1,6 @@
+The Debian Package vyatta-cron
+----------------------------
+
+This package has Vyatta task scheduler configuration templates and scripts.
+
+ -- Daniil Baturin <daniil@baturin.org>  Sat, 10 Aug 2013 13:08:10 -0700

@@ -1,0 +1,6 @@
+vyatta-cron (1.0.0) unstable; urgency=low
+
+  * Initial release.
+
+ -- Daniil Baturin <daniil@baturin.org>  Sat, 10 Aug 2013 18:05:53 -0700
+

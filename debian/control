@@ -1,0 +1,17 @@
+Source: vyatta-cron
+Section: contrib/net
+Priority: extra
+Maintainer: SO3 Group <maintainers@so3group.net>
+Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 5), autotools-dev, autoconf
+
+Package: vyatta-cron
+Architecture: all
+Depends: vyatta-cfg-system,
+ vyatta-cfg,
+ vyatta-op,
+ cron,
+ ${misc:Depends}
+Replaces: vyatta-cron
+Description: Vyatta task scheduler configuration
+ Vyatta task scheduler configuration utiliites, templates and scripts.

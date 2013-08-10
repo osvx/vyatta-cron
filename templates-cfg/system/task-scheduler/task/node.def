@@ -1,0 +1,14 @@
+tag:
+type: txt
+help: Scheduled task
+val_help: Task name
+priority: 999
+end:
+    if [ ${COMMIT_ACTION} == DELETE ]; then
+        sudo /opt/vyatta/sbin/vyatta-update-crontab.pl --delete
+        sudo /etc/init.d/cron restart
+    else
+        sudo /opt/vyatta/sbin/vyatta-update-crontab.pl --update || exit 1
+        sudo /etc/init.d/cron restart
+    fi
+
