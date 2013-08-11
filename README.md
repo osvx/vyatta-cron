@@ -77,3 +77,7 @@ Path and arguments of the executable to run.
 
 This package is just a wrapper for UNIX crontab, nothing more.
 
+Configuration is written to /etc/cron.d/vyatta-crontab.
+
+On reboot it is removed before config load and re-created if
+related configuration exists.
