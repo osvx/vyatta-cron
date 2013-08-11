@@ -10,6 +10,10 @@ sbin_SCRIPTS = scripts/vyatta-update-crontab.pl
 
 bin_sudo_users_SCRIPTS = scripts/vyatta-restart-crond.sh
 
+checkparamsonrebootdir = $(bindir)/sudo-users/check-params-on-reboot.d
+checkparamsonreboot_SCRIPTS =
+checkparamsonreboot_SCRIPTS += scripts/check-params-on-reboot.d/reset-vyatta-cron
+
 curver_DATA = cfg-version/cron@1
 
 cpiop = find  . ! -regex '\(.*~\|.*\.bak\|.*\.swp\|.*\#.*\#\)' -print0 | \
