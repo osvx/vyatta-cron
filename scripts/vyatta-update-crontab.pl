@@ -24,47 +24,16 @@ use lib "/opt/vyatta/share/perl5/";
 
 use strict;
 use warnings;
-use Getopt::Long;
 use Vyatta::Config;
 
-
-
 my $default_user = "root";
-my $crontab = "/etc/crontab";
-
-my $crontab_template = <<EOL;
-# /etc/crontab: system-wide crontab
-# Unlike any other crontab you don't have to run the `crontab'
-# command to install the new version when you edit this file
-# and files in /etc/cron.d. These files also have username fields,
-# that none of the other crontabs do.
-
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
-# m h dom mon dow user	command
-17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
-25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
-47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
-52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
-#
-
-EOL
-
+my $crontab = "/etc/cron.d/vyatta-crontab";
 my $crontab_header = "### Added by /opt/vyatta/sbin/vyatta-update-crontab.pl ###\n";
 
 sub error
 {
     my ($task, $msg) = @_;
     die("Error in task $task: $msg");
-}
-
-sub clear_crontab
-{
-    open(HANDLE, ">$crontab");
-    select(HANDLE);
-    print $crontab_template;
-    close(HANDLE);
 }
 
 sub update_crontab
@@ -149,22 +118,10 @@ sub update_crontab
 
     open(HANDLE, ">$crontab") || die("Could not open /etc/crontab for write");
     select(HANDLE);
-    print $crontab_template;
     print $crontab_append;
     close(HANDLE);
 }
 
-
-## Get options and decide with action
-my $delete;
-my $update;
-
-GetOptions(
-    "delete" => \$delete,
-    "update" => \$update,
-);
-
-clear_crontab()  if defined($delete);
-update_crontab() if defined($update);
+update_crontab();
 
 exit(0);
