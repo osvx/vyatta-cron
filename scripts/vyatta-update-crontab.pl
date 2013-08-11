@@ -39,6 +39,13 @@ sub error
 sub update_crontab
 {
     my $config = new Vyatta::Config();
+
+    if( !$config->exists("system task-scheduler task") )
+    {
+        # Nothing to do
+        exit(0);
+    }
+
     $config->setLevel("system task-scheduler task");
 
     my $crontab_append = $crontab_header;
