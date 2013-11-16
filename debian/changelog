@@ -1,3 +1,9 @@
+vyatta-cron (1.0.3+hydrogen1) unstable; urgency=low
+
+  * New branch
+
+ -- Daniil Baturin <daniil@baturin.org>  Sat, 16 Nov 2013 18:16:51 +0100
+
 vyatta-cron (1.0.2) unstable; urgency=low
 
   * Do not do anything if no tasks configured.
