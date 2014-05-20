@@ -1,3 +1,9 @@
+vyatta-cron (1.0.3+vyos1+helium3) unstable; urgency=low
+
+  * -i
+
+ -- Daniil Baturin <daniil@baturin.org>  Tue, 20 May 2014 08:31:17 +0200
+
 vyatta-cron (1.0.3+vyos1+helium2) unstable; urgency=low
 
   [ mjpcomp ]
