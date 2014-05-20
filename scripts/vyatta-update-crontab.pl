@@ -102,10 +102,13 @@ sub update_crontab
             }
             elsif( $suffix eq 'h' )
             {
+                $minutes = "0";
                 $hours = "*/$value";
             }
             elsif( $suffix eq 'd' )
             {
+                $minutes = "0";
+                $hours = "0";
                 $days = "*/$value";
             }
 
