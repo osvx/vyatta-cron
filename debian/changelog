@@ -1,3 +1,12 @@
+vyatta-cron (1.0.3+vyos1+helium2) unstable; urgency=low
+
+  [ mjpcomp ]
+  * Update vyatta-update-crontab.pl
+
+  [ Daniil Baturin ]
+
+ -- Daniil Baturin <daniil@baturin.org>  Tue, 20 May 2014 08:30:26 +0200
+
 vyatta-cron (1.0.3+vyos1+helium1) unstable; urgency=low
 
   * New branch
