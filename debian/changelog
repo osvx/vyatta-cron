@@ -1,3 +1,9 @@
+vyatta-cron (1.0.3+vyos1+helium4) unstable; urgency=low
+
+  * Bug 215: add value checks for intervals.
+
+ -- Daniil Baturin <daniil@baturin.org>  Fri, 23 May 2014 04:14:23 +0200
+
 vyatta-cron (1.0.3+vyos1+helium3) unstable; urgency=low
 
   * -i
