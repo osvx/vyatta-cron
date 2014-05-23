@@ -98,15 +98,30 @@ sub update_crontab
 
             if( !defined($suffix) || ($suffix eq 'm') )
             {
+                if( $value > 60 )
+                {
+                    error("Interval in minutes must not exceed 60!");
+                }
+
                 $minutes = "*/$value";
             }
             elsif( $suffix eq 'h' )
             {
+                if( $value > 24 )
+                {
+                    error("Interval in hours must not exceed 24!");
+                }
+
                 $minutes = "0";
                 $hours = "*/$value";
             }
             elsif( $suffix eq 'd' )
             {
+                if( $value > 31 )
+                {
+                   error("Interval in days must not exceed 31!");
+                }
+
                 $minutes = "0";
                 $hours = "0";
                 $days = "*/$value";
