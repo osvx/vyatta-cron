@@ -1,3 +1,9 @@
+vyatta-cron (1.0.3+osvx1+projectx1) unstable; urgency=medium
+
+  * Add .gitignore
+
+ -- Valentin Yakovenkov <yakovenkov@gmail.com>  Mon, 02 Jun 2014 12:17:40 +0400
+
 vyatta-cron (1.0.3+vyos1+helium4) unstable; urgency=low
 
   * Bug 215: add value checks for intervals.
